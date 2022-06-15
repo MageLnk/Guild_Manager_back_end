@@ -5,11 +5,11 @@ import bodyParser from "body-parser";
 const app = express();
 const PORT = 5000;
 // Routes
-import lostArkUsersRoutes from "./routes/lostArk/users/index.js";
+import usersRoutes from "./routesExample/users/index.js";
 // Middleware
 app.use(bodyParser.json());
 // Working routes
-app.use("/lostark", lostArkUsersRoutes);
+app.use("/users", usersRoutes);
 // Aplication
 
 // Listener
