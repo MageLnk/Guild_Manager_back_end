@@ -1,3 +1,7 @@
+// A partir de acá, es el router antiguo, que compagina con la versión antigua de node. Funciona pero es old
+
+/*
+
 const express = require("express");
 const { Router } = express;
 const router = new Router();
@@ -36,3 +40,5 @@ router.get("/users", (req, res) => {
 });
 
 module.exports = router;
+
+*/
