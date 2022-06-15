@@ -3,14 +3,8 @@
 // Variables
 let users = [
   {
-    firstName: "Jhon",
-    lastName: "Doe",
-    age: 25,
-  },
-  {
-    firstName: "Jane",
-    lastName: "Doe",
-    age: 24,
+    userName: "MageLink",
+    password: "1234",
   },
 ];
 // App
