@@ -1,25 +1,21 @@
+// Imports escenciales
 import express from "express";
 import bodyParser from "body-parser";
-
+// Basic starting points
 const app = express();
 const PORT = 5000;
-
-// Comentando la versión "Antigua" del API Rest. Funciona, pero es old.
-// El chiste, es sacar el "type" del .json
-
-/*
-const express = require("express");
-const cors = require("cors");
-const indexRouter = require("./routers/index");
-// Basic Statements
-const app = express();
-// Middle ware
-app.use(cors());
-app.use(express.json());
-// App
-app.use("/admin", indexRouter);
-
-app.listen(5000, () => {
-  console.log("Server started OK");
+// Routes
+import usersRoutes from "./routesExample/users/index.js";
+// Middleware
+app.use(bodyParser.json());
+// Working routes
+app.use("/users", usersRoutes);
+// Aplication
+app.get("/", (req, res) => {
+  console.log("TEST");
+  res.send("Hello from ola k ase");
 });
-*/
+// Listener
+app.listen(PORT, () => {
+  console.log(`Server runing on port: htttp://localhost:${PORT}`);
+});
