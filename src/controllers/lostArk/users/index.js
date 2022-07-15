@@ -5,6 +5,11 @@ let users = [
   {
     userName: "MageLink",
     password: "1234",
+    games: {
+      blackDesert: true,
+      finalFantasyXIV: false,
+      lostArk: true,
+    },
   },
 ];
 // App
