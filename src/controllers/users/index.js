@@ -45,13 +45,13 @@ export const getAllGeneralUsers = (req, res) => {
 };
 export const getUser = (req, res) => {
   console.log(req.body);
-  const checkUsers = dummyUsers.find((check) => {
+  const checkUser = dummyUsers.find((check) => {
     return check.userName === req.body.userName && check.password === req.body.password;
   });
 
-  if (checkUsers === undefined) {
-    res.send("Hay un error con el match de usuario");
+  if (checkUser === undefined) {
+    res.status(406).send("Hay un error con el match de usuario");
     return;
   }
-  res.send("Todo ok, en un futuro enviaré el usuario que haga match con el logIn");
+  res.status(200).send("Todo ok, en un futuro enviaré el usuario que haga match con el logIn");
 };
