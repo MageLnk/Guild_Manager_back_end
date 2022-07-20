@@ -53,5 +53,7 @@ export const getUser = (req, res) => {
     res.status(406).send("Hay un error con el match de usuario");
     return;
   }
-  res.status(200).send("Todo ok, en un futuro enviaré el usuario que haga match con el logIn");
+  res
+    .status(200)
+    .send({ mSg: "Todo ok, en un futuro enviaré el usuario que haga match con el logIn" });
 };
