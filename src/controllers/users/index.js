@@ -50,10 +50,15 @@ export const getUser = (req, res) => {
   });
 
   if (checkUser === undefined) {
-    res.status(406).send("Hay un error con el match de usuario");
+    res
+      .status(406)
+      .send({ msg: "Hay un problema con el usuario y contraseña", loginStatus: false });
     return;
   }
   res
     .status(200)
-    .send({ mSg: "Todo ok, en un futuro enviaré el usuario que haga match con el logIn" });
+    .send({
+      msg: "Todo ok, en un futuro enviaré el usuario que haga match con el logIn",
+      loginStatus: true,
+    });
 };
