@@ -22,25 +22,20 @@ export const getUser = (req, res) => {
     return;
   }
   res.status(200).send({
-    msg: "Todo ok, en un futuro enviaré el usuario que haga match con el logIn",
+    msg: "Todo ok",
     loginStatus: true,
-    userId: checkUser.secretData.id,
+    userId: checkUser.secretData.idUser,
   });
 };
 // Active Games
 export const activeGames = (req, res) => {
-  const checkGames = dummyGames.find((check) => {
+  const returnActivesGames = dummyUsers.find((check) => {
     // El + es temporal, igual que los ID, mientras fabrico la verdadera DB
-    return +req.body.gameId === check.gameInfo.idGame;
+    return +req.body.idUser === check.secretData.idUser;
   });
-  if (checkGames === undefined) {
-    res.status(406).send({ msg: "El id del juego no corresponde" });
+  if (returnActivesGames === undefined) {
+    res.status(406).send({ msg: "El id del usuario no corresponde" });
     return;
   }
-  res.status(200).send({ msg: "Todo ok", data: checkGames });
+  res.status(200).send({ msg: "Todo ok", data: returnActivesGames.publicData.games });
 };
-
-/*
-Con el ID del usuario, traigo los juegos activos y su respectivo ID para guardarlos en Front
-Cuando seleccione algún juego, 
-*/
